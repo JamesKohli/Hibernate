@@ -1,9 +1,15 @@
 package com.jameskohli;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Created by James on 9/15/2014.
  */
+@Entity
 public class UserDetails {
+
+    @Id
     private int userId;
     private String userName;
 
