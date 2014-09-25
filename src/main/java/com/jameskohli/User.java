@@ -6,8 +6,8 @@ import javax.persistence.Id;
 /**
  * Created by James on 9/15/2014.
  */
-@Entity
-public class UserDetails {
+@Entity (name="UserDetails")
+public class User {
 
     @Id
     private int userId;

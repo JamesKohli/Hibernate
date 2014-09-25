@@ -10,7 +10,7 @@ import org.hibernate.cfg.Configuration;
 public class HibernateTest {
 
     public static void main(String[] args){
-        UserDetails userDetails = new UserDetails();
+        User userDetails = new User();
         userDetails.setUserId(1);
         userDetails.setUserName("James Kohli");
 
