@@ -10,7 +10,7 @@ import java.util.Date;
 @Table(name="UserDetails")
 public class User {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String userName;
     @Temporal(TemporalType.DATE)
