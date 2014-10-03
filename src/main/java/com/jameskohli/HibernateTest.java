@@ -18,9 +18,23 @@ public class HibernateTest {
     public static void main(String[] args){
         User userDetails = new User();
         userDetails.setUserName("James Kohli");
-        userDetails.setAddress("27 Chestnut St");
-        userDetails.setJoinedDate(new Date());
-        userDetails.setDescription("Me!");
+
+
+        //Saving another object in a class
+        Address address = new Address();
+        address.setCity("New York");
+        address.setState("NY");
+        address.setStreet("Main St");
+        address.setZip("10016");
+
+        Address address2 = new Address();
+        address2.setCity("Boston");
+        address2.setState("MA");
+        address2.setStreet("Main St");
+        address2.setZip("02483");
+
+        userDetails.getAddresses().add(address);
+        userDetails.getAddresses().add(address2);
 
         //Fire up hibernate
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();

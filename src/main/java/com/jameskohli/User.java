@@ -2,6 +2,8 @@ package com.jameskohli;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by James on 9/15/2014.
@@ -13,34 +15,15 @@ public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String userName;
-    @Temporal(TemporalType.DATE)
-    private Date joinedDate;
-    private String address;
-    @Lob
-    private String description;
+    @ElementCollection
+    private Set<Address> addresses = new HashSet<Address>();
 
-    public Date getJoinedDate() {
-        return joinedDate;
+    public Set<Address> getAddresses() {
+        return addresses;
     }
 
-    public void setJoinedDate(Date joinedDate) {
-        this.joinedDate = joinedDate;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
     }
 
     public int getUserId() {
